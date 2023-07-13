@@ -53,6 +53,19 @@ public class MainWrapper {
     System.out.println(PI);
     
     // reference type : 참조타입
+    //
+    //       ┌--------------┐
+    //   name│  0x12345678  │
+    //       │--------------│
+    //       │      ...     │
+    //       │--------------│
+    //       │      tom     │0x12345678
+    //       │--------------│
+    //       │      ...     │
+    //       └--------------┘
+    //
+    
+    // reference type : 참조타입
     String name = "tom";
     System.out.println(name);
     
