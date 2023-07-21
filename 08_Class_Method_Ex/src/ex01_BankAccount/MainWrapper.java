@@ -1,4 +1,4 @@
-package exo1_BankAccount;
+package ex01_BankAccount;
 
 public class MainWrapper {
 
