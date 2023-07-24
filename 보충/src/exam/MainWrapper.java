@@ -252,7 +252,7 @@ public class MainWrapper {
 		}
 		System.out.println("합계는 "+ total + "입니다.");
 		
-		
+		/*
 		total = 0;
 		for(int n : a) {
 		  if( n > 0) {
@@ -260,6 +260,7 @@ public class MainWrapper {
 		  }
 		}
 		System.out.println("합계는 "+ total + "입니다.");
+		*/
 	}
 	
 	// q13. 제시된 배열 a에 상수 TARGET과 동일한 문자가 몇 개 포함되어 있는지 갯수를 구해서 출력하시오.

@@ -16,7 +16,6 @@ public class MainWrapper {
                     // 계좌번호: 012-34-56789, 통장잔액: 50000원
                     // 개설지점: 국민은행가산지점(02-111-1111)
     
-    
     Bank bank1 = new Bank();
     bank1.setName("우리은행");
     bank1.setTel("02-222-2222");
@@ -67,5 +66,4 @@ public class MainWrapper {
     member2.info();
 
   }
-
 }
