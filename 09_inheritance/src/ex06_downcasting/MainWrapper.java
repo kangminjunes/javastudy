@@ -34,7 +34,7 @@ public class MainWrapper {
   } 
   
   public static void main(String[] args) {
-    ex02();
+    ex01();
     ex03();
   }
 
