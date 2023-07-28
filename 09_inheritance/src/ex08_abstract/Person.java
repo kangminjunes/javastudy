@@ -1,4 +1,4 @@
-package ex08_abstract;
+package ex08_abstract; 
 
  /*
   *  추상 클래스
