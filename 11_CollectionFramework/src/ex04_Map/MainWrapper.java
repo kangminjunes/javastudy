@@ -10,7 +10,7 @@ public class MainWrapper {
 
   /*
    * HashMap
-   * 1. Map 인터페이스를 구현한 클리스이다.
+   * 1. Map 인터페이스를 구현한 클래스이다.
    * 2. 객체(Object)/인스턴스(Instance)를 대신할 수 있는 자료구조이다.
    * 3. 용어
    *    1) Entry : Key + Value를 합쳐서 부르는 말
