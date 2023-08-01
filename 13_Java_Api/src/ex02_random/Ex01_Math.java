@@ -38,7 +38,7 @@ public class Ex01_Math {
   
   public static void main(String[] args) {
     ex02();
-
+    
   }
 
 }

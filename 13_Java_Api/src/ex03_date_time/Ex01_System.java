@@ -11,13 +11,14 @@ public class Ex01_System {
      */
     
     long timestamp = System.currentTimeMillis();
+    System.out.println("1번 예시정답");
     System.out.println(timestamp);
     System.out.println(Long.MAX_VALUE);
   }
   
   public static void ex02() {
     /*
-      * 시간 단위
+     * 시간 단위
      * 
      * second > ㎳     > ㎲         > ㎱             > ㎰
      *          밀리초   마이크로초   나노초           피코초
@@ -38,7 +39,7 @@ public class Ex01_System {
     }
     
     long end = System.nanoTime();
-    
+    System.out.println("2번 예시정답");
     System.out.println("수행시간: " + (end - start)+"ns");
     
   }
