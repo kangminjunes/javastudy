@@ -5,8 +5,7 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
-public class Library {
-  
+public class Library { 
   private List<Book> books;         // 선언
   private Scanner sc;               // 선언
   
