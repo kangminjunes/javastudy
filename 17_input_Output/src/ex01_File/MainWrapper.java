@@ -11,6 +11,7 @@ public class MainWrapper {
    * 1. 파일, 디렉터리를 관리하는 클래스이다.
    * 2. 파일, 디렉터리를 생성/삭제가 가능하다.
    * 3. 파일, 디렉터리의 각종 정보(이름, 크기. 최종수정일 등)를 확인할 수 있다.
+   * 
    */
   
   /*
@@ -32,8 +33,8 @@ public class MainWrapper {
     File dir;
     
     // File 객체 생성
-      dir = new File("C:" + sep + "storage");  
-   // dir = new File("C:\\storage");  // C드라이브 아래에 있는 storage 디렉터리
+       dir = new File("C:" + sep + "storage");  
+    // dir = new File("C:\\storage");  // C드라이브 아래에 있는 storage 디렉터리
     
     // C:\storage 디렉터리가 없으면 만들고, 있으면 지우기
     if(dir.exists()) {

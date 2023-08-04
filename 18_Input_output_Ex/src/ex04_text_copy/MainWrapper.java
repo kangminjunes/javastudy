@@ -70,10 +70,7 @@ public class MainWrapper {
       fout.close();
       
     } catch(Exception e) {
-      e.printStackTrace();
-      
-      
-      
+      e.printStackTrace();  
     }
     System.out.println("파일 복사가 되었습니다.");
   }
