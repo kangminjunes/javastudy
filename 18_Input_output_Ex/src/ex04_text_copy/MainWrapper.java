@@ -1,8 +1,10 @@
 package ex04_text_copy;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class MainWrapper {
@@ -12,67 +14,71 @@ public class MainWrapper {
     // 문제1. 다음과 같이 알파벳 대문자가 입력된 C:/storage/alphabet.txt 파일을 만드시오.
     // ABCDEFGHIJKLMNOPQRSTUVWXYZ
     
-    String sep = File.separator;
+    // File 객체
+    File dir = new File("C:/storage");
+    if(dir.exists() == false) {
+      dir.mkdirs();
+    }
+    File file = new File(dir, "alphabet.txt");
     
-   File dir;
-   dir = new File("C:/storage");
-   if(!dir.exists());
-   dir.mkdir();
-   
-   File file =new File(dir, "alphabet.txt");
-   
-   FileOutputStream fout = null;
+    // 버퍼출력스트림 생성(close가 필요 없는 try-catch-resources문)
+    try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
+      
+      // 알파벳 순차적으로 하나씩 저장
+      for(char ch = 'A'; ch <= 'Z'; ch++) {
+        writer.write(ch);
+      }
+      
+      // 버퍼출력스트림에 (혹시) 남아 있는 모든 데이터를 보내기
+      writer.flush();
+      
+      // 결과 메시지
+      System.out.println(file.getPath() + " 파일 생성 완료");
+      
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
     
-   try {
-     
-     // 파일출력스트림 생성 (반드시 예외 처리가 필요한 코드)
-     fout = new FileOutputStream(file);
-     
-     // 출력할 데이터(파일로 보낼 데이터)
-     String s ="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-     byte[] b = s.getBytes("UTF-8");  // byte[] : String을 byte[]로 변환
-   
-     // 출력(파일로 데이터 보내기)
-     fout.write(b);
-     
-   } catch (IOException e) {
-     e.printStackTrace();
-   } finally {
-     try {
-       if(fout != null) {
-         fout.close();  // 출력스트림은 반드시 닫아줘야 함 (반드시 예외 처리가 필요한 코드)
-       }
-     } catch (IOException e) {
-       e.printStackTrace();
-     }
-   }
-   System.out.println(file.getPath()+"생성되었습니다.");
   }
-  
-
   
   public static void ex02() {
     
     // 문제2. C:/storage/alphabet.txt 파일을 복사하여 C:/storage/alphabet2.txt 파일을 만드시오.
-    try {
-      String old_name = "C:/storage/alphabet.txt";
-      String new_name = "C:/storage/alphabet2.txt";
-      
-      FileInputStream fin = new FileInputStream(old_name);
-      
-      FileOutputStream fout = new FileOutputStream(new_name);
-      
-      int tmp =0;
-      while ((tmp = fin.read()) != -1){
-        fout.write(tmp);
-      }
-      fin.close();
-      fout.close();
-      
-    } catch(Exception e) {
-      e.printStackTrace();  
+    
+    // 디렉터리 File 객체
+    File dir = new File("C:/storage");
+    if(dir.exists() == false) {
+      dir.mkdirs();
     }
-    System.out.println("파일 복사가 되었습니다.");
+    
+    // 원본 File 객체
+    File src = new File(dir, "alphabet.txt");
+    
+    // 복사본 File 객체
+    File cp = new File(dir, "alphabet2.txt");
+    
+    // try-catch-resources
+    try (BufferedReader br = new BufferedReader(new FileReader(src));
+         BufferedWriter bw = new BufferedWriter(new FileWriter(cp))) {
+      
+      // 복사 단위 5 char
+      char[] cbuf = new char[5];
+      
+      // 실제로 읽은 char 개수
+      int readChar = 0;
+      
+      // 복사
+      while((readChar = br.read(cbuf)) != -1) {
+        bw.write(cbuf, 0, readChar);
+      }
+      
+      // 결과 메시지
+      System.out.println(cp.getPath() + " 파일 생성 완료");
+      
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    
   }
   
   public static void main(String[] args) {
