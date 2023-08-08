@@ -3,6 +3,7 @@ package ex02_terminal;
 
 import java.io.InputStreamReader;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -29,7 +30,7 @@ public class MainWrapper {
     Stream<String> stream = Stream.of("봄", "여름", "가을", "겨울");
     
     // Stream -> List
-    List<String> list = stream.toList();
+    List<String> list = stream.collect(Collectors.toList());
     System.out.println(list);
   }
   
