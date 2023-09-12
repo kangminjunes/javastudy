@@ -136,8 +136,7 @@ public class NaverApiSearchBook {
       try (BufferedWriter bw = new BufferedWriter(new FileWriter(file, true))) {
         bw.write(time + "  " + message + "  " +  clazz);
         bw.newLine();
-        
-        System.out.println(file.getPath() + " 예외처리 내용 추가 완료");
+        System.out.println(file.getPath() + "파일에 로그가 작성되었습니다");
         
         
       } catch (Exception ex) {
